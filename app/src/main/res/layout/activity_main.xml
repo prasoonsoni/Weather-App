@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252A34"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="348dp"
+        android:layout_height="379dp"
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="SEARCH THE CITY"
+            android:textAlignment="center"
+            android:textColor="#08D9D6"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/cityName"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/search"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/baloo"
+            android:hint="ENTER CITY NAME HERE."
+            android:inputType="textPersonName"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/location" />
+
+        <Button
+            android:id="@+id/findButton"
+            android:layout_width="240dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/baloo"
+            android:text="FIND"
+            android:textColor="#252a34"
+            android:textSize="30sp"
+            app:backgroundTint="#08D9D6" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
