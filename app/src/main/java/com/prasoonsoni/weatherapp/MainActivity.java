@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         humidity.animate().translationXBy(1500f).setDuration(3600);
         searchAgainButton.animate().translationXBy(1500f).setDuration(3700);
         homeLayout.animate().translationYBy(2000f).setDuration(5000);
+        findButton.setClickable(true);
+        searchAgainButton.setClickable(false);
     }
 
     @Override
@@ -135,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
                     humidity.animate().translationXBy(-1500f).setDuration(3600);
                     searchAgainButton.animate().translationXBy(-1500f).setDuration(3700);
                     homeLayout.animate().translationYBy(-2000f).setDuration(2000);
+                    findButton.setClickable(false);
+                    searchAgainButton.setClickable(true);
                 } else {
                     Toast.makeText(getApplicationContext(), "Cannot Find Weather!!", Toast.LENGTH_SHORT).show();
                     //weatherLayout.setVisibility(View.INVISIBLE);
