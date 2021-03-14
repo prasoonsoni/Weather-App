@@ -7,65 +7,121 @@
     android:background="#252A34"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/homeLayout"
-        android:layout_width="348dp"
-        android:layout_height="379dp"
-        android:background="@drawable/background"
-        android:orientation="vertical"
-        android:translationY="-2000px"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:translationY="-3000px"
+        app:layout_constraintBottom_toTopOf="@+id/whatsTheWeather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cloudy" />
+
+    <TextView
+        android:id="@+id/whatsTheWeather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="What's the weather?"
+        android:textColor="#EAEAEA"
+        android:textSize="30sp"
+        android:translationY="-3000px"
+        app:layout_constraintBottom_toTopOf="@+id/homeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:translationY="-3000px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whatsTheWeather">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:fontFamily="@font/baloo"
             android:gravity="center"
-            android:text="SEARCH THE CITY"
+            android:text="Search the city"
             android:textAlignment="center"
-            android:textColor="#08D9D6"
-            android:textSize="40sp" />
+            android:textColor="#546ee5"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/cityName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/cityName"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/search"
             android:drawableLeft="@drawable/location"
             android:drawablePadding="12dp"
             android:ems="10"
             android:fontFamily="@font/baloo"
-            android:hint="ENTER CITY NAME HERE."
+            android:hint="City name here..."
             android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:textColor="@android:color/black"
+            android:textColor="#546ee5"
             android:textColorHint="@android:color/darker_gray"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/findButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
             android:id="@+id/findButton"
-            android:layout_width="240dp"
-            android:layout_height="65dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/button"
-            android:backgroundTint="#000000"
+            android:drawableLeft="@drawable/search_for_button"
             android:fontFamily="@font/baloo"
+            android:gravity="center"
             android:onClick="toFindWeather"
-            android:text="FIND"
-            android:textColor="#252a34"
-            android:textSize="30sp"
-            app:backgroundTint="#08D9D6" />
-    </LinearLayout>
+            android:paddingLeft="18dp"
+            android:textColor="#546ee5"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cityName"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/weatherLayout"
@@ -76,10 +132,12 @@
 
         <TextView
             android:id="@+id/setCityName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="DIDWANA"
             android:textColor="#EAEAEA"
             android:textSize="45sp"
             android:translationX="1500px"
@@ -89,10 +147,12 @@
 
         <TextView
             android:id="@+id/cityTemp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="19°C"
             android:textColor="#FF2E63"
             android:textSize="100sp"
             android:translationX="1500px"
@@ -103,12 +163,15 @@
 
         <TextView
             android:id="@+id/feelsLike"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="FEELS LIKE 19°C"
             android:textColor="@android:color/darker_gray"
             android:textSize="20sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toTopOf="@+id/cloudLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cityTemp" />
@@ -119,11 +182,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/baloo"
-            android:paddingLeft="50dp"
+            android:gravity="center"
+            android:text="HUMIDITY: 10%"
             android:textColor="#08D9D6"
             android:textSize="20sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toTopOf="@+id/searchAgainButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pressure" />
 
@@ -133,60 +199,132 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/baloo"
-            android:paddingLeft="50dp"
+            android:gravity="center"
+            android:text="PRESSURE: 18hPa"
             android:textColor="#08D9D6"
             android:textSize="20sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toTopOf="@+id/humidity"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/maxTemp" />
+            app:layout_constraintTop_toBottomOf="@+id/windSpeed" />
 
         <TextView
-            android:id="@+id/maxTemp"
+            android:id="@+id/windSpeed"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/baloo"
-            android:paddingLeft="50dp"
+            android:gravity="center"
+            android:text="WIND: 5.1m/s"
             android:textColor="#08D9D6"
             android:textSize="20sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toTopOf="@+id/pressure"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/minTemp" />
+            app:layout_constraintTop_toBottomOf="@+id/visibility" />
 
         <TextView
-            android:id="@+id/minTemp"
+            android:id="@+id/visibility"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:fontFamily="@font/baloo"
-            android:paddingLeft="50dp"
 
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="VISIBILITY: 10.0km"
             android:textColor="#08D9D6"
             android:textSize="20sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toTopOf="@+id/windSpeed"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feelsLike" />
+            app:layout_constraintTop_toBottomOf="@+id/cloudLayout" />
 
         <Button
             android:id="@+id/searchAgainButton"
-            android:layout_width="240dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/button_search"
             android:drawableLeft="@drawable/ic_baseline_search_24"
             android:drawablePadding="12dp"
             android:fontFamily="@font/baloo"
             android:onClick="searchAgain"
-            android:paddingLeft="12dp"
+            android:paddingLeft="20dp"
             android:text="SEARCH ANOTHER CITY"
             android:textColor="#252A34"
             android:textSize="16sp"
             android:translationX="1500px"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/humidity" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cloudLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:alpha="0"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/visibility"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feelsLike">
+
+            <ImageView
+                android:id="@+id/cloudView"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:alpha="1"
+                app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cloudx" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="BROKEN CLOUDS"
+                android:textColor="#F8AD2A"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cloudView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/mountains"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:translationY="3000px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeLayout"
+        app:srcCompat="@drawable/mountain" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
